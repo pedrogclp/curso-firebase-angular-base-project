@@ -1,7 +1,8 @@
 'use strict';
 function route(app) {
 
-  
+
+  app.use('/api/creditos', require('/api/creditos'));
 
   app.get('/', angularRouter);
   app.route('/:url(api|auth|components|app|bower_components|assets)/*')

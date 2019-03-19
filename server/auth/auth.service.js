@@ -11,7 +11,7 @@ module.exports.isAuthenticated = function (req, res, next) {
       req.uid = decodedToken.uid
       next();
     }).catch(function (error) {
-      console.log('Error=>', error);
+      console.error(error);
       return res.status(401).end();
     })
 }

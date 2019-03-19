@@ -5,7 +5,7 @@ const http = require('http');
 const bodyParser = require('body-parser');
 
 var admin = require("firebase-admin");
-var serviceAccount = require("./firebase-creditos.json");
+var serviceAccount = require("./curso-firebase-angular-bp.json");
 
 const app = express();
 

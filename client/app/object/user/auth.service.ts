@@ -148,12 +148,20 @@ export class AuthService {
             return result.asObservable();
         }
         else if (provider === "twitter") {
-            this.angularFireAuth
-                .auth
-                .signInWithPopup(new firebase.auth.TwitterAuthProvider())
-                .then(auth => result.next("success"))
-                .catch(err => result.error(err));
-            return result.asObservable();
+          this.angularFireAuth
+            .auth
+            .signInWithPopup(new firebase.auth.TwitterAuthProvider())
+            .then(auth => result.next("success"))
+            .catch(err => result.error(err));
+          return result.asObservable();
+        }
+        else if (provider === "facebook") {
+          this.angularFireAuth
+            .auth
+            .signInWithPopup(new firebase.auth.FacebookAuthProvider())
+            .then(auth => result.next("success"))
+            .catch(err => result.error(err));
+          return result.asObservable();
         }
         result.error("Not a supported authentication method: " + provider)
         return result.asObservable();

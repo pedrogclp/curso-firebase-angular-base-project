@@ -1,0 +1,29 @@
+<h1>Registro</h1>
+
+<form #registroForm name="registroForm" role="form" (ngSubmit)="onSubmit(registroForm)">
+  <div>
+    <label>Nombre</label>
+    <input type="nombre" nombre #nombre="ngModel" name="nombre" [ngModel]="_nombre" required>
+    <span [hidden]="nombre.valid || !nombre.touched">El nombre no puede ser vacío</span>
+  </div>
+  <div>
+    <label>Email</label>
+    <input type="email" email #email="ngModel" name="email" [ngModel]="_email" required>
+    <span [hidden]="email.valid || !email.touched">El email no es correcto</span>
+  </div>
+  <div>
+    <label>Password</label>
+    <input type="password" password #password="ngModel" name="password" [ngModel]="_password" required>
+    <span [hidden]="password.valid || !password.touched">Debes escribir una contraseña</span>
+  </div>
+  <div>
+    <label>Repetir Password</label>
+    <input type="repeatPassword" repeatPassword #repeatPassword="ngModel" name="repeatPassword" [ngModel]="_repeatPassword" required>
+    <span [hidden]="repeatPassword.valid || !repeatPassword.touched">Las contraseñas son diferentes</span>
+  </div>
+    <input type="submit" value="Registro">
+</form>
+
+<span [hidden]="!_registroExito">Se ha registrado con éxito</span>
+
+<input type="button" value="Volver" (click)="backHome()">

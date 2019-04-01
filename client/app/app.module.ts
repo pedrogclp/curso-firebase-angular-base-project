@@ -66,6 +66,9 @@ import { CdkTableModule } from '@angular/cdk/table';
 // Componentes de la aplicación
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
+import { LoginComponent } from './autenticacion/login/login.component';
+import { ResetComponent } from './autenticacion/reset/reset.component';
+import { RegistroComponent } from './autenticacion/registro/registro.component';
 
 // Servicio de Autenticación ligado a Firebase
 import { AuthService } from "./object/user/auth.service";
@@ -127,14 +130,20 @@ const appRoutes: Routes = [
     pathMatch: 'full'
   },
   { path: '', component: MainComponent },
- 
+  { path: 'login', component: LoginComponent },
+  { path: 'reset', component: ResetComponent },
+  { path: 'registro', component: RegistroComponent },
+
   //{ path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
+    LoginComponent,
+    RegistroComponent,
+    ResetComponent
   ],
   imports: [
     BrowserModule,

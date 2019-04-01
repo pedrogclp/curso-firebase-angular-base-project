@@ -1,6 +1,10 @@
-<h1>
-    {{title}}
-</h1>
+<div *ngIf="(isLoggedIn|async)">
+  <input type="button" value="Ver perfil">
+  <input type="button" value="Administrar créditos">
+  <input type="button" value="Cerrar sesión">
+</div>
 
-Proyecto base FEAN Stack Versión 0.1 -
-<a href="http://www.dacompsc.com">DAComp SC</a>
+<div *ngIf="!(isLoggedIn|async)">
+  <input type="button" value="Iniciar sesión" (click)="redireccionarALogin()">
+  <input type="button" value="Registrarse" (click)="redireccionarARegistro()">
+</div>

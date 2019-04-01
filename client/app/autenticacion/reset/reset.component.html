@@ -1,0 +1,17 @@
+<h1>Recordar la contraseña</h1>
+<input type="button" value="Google">
+
+<br>
+
+<form #resetForm name="resetForm" role="form" (ngSubmit)="onSubmit(resetForm)">
+  <div>
+    <label>Email</label>
+    <input type="email" email #email="ngModel" name="email" [ngModel]="_email" required>
+    <span [hidden]="email.valid || !email.touched">El email no es correcto</span>
+  </div>
+  <input type="submit" value="Enviar al correo">
+</form>
+
+<span [hidden]="!_emailEnviado">Revisa tu correo, hemos enviado un enlace.</span>
+
+<input type="button" value="Volver" (click)="backHome()">
